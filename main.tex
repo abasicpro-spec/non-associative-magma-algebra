@@ -1,0 +1,107 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+
+\usepackage{graphicx}
+
+\usepackage{hyperref}
+
+
+\title{\textbf{A 4D Non-Associative Loop Algebra for Extraneous Solutions}}
+
+\author{\textbf{Leonardo Urban} \\ \small{ORCID iD: 0009-0008-2147-026X}}
+
+\date{\today}
+
+
+\begin{document}
+
+
+\maketitle
+
+
+\begin{abstract}
+
+This paper presents the formal algebraic construction of a 4-dimensional, power-associative, globally non-associative algebra over $\mathbb{R}$ spanned by the basis $\{1, i, t, it\}$. This system introduces a specialized radical unit defined by $\sqrt{t} = -1$, (t is currently a placeholder for this unit), designed to capture and evaluate multi-valued extraneous branches that standard associative fields structurally discard. We demonstrate that the multiplicative structure forms a closed Loop (non-associative magma), providing an analytic path-dependent framework viable as a cryptographic primitive for post-quantum key exchange networks.
+
+\end{abstract}
+
+
+\section{Introduction and Split-Complex Number System Limitations}
+
+In standard complex and split-complex fields governed by global associativity, attempting to evaluate the negative root state of a radical unit forces a logical collapse. If an element $j$ satisfies $j^2 = 1$, enforcing the radical condition $\sqrt{j} = -1$ immediately causes:
+
+\begin{equation}
+j = (\sqrt{j})^2 = (-1)^2 = 1
+\end{equation}
+
+This violates the foundational split-complex constraint $j \neq \pm 1$. Standard calculus resolves this by discarding extraneous radical roots. This framework proposes an alternative architecture by abandoning global associativity to preserve path history.
+
+
+\section{Foundational Axioms and Loop Structure}
+
+We define a 4-dimensional vector space spanned by the linearly independent basis $\{1, i, t, it\}$ subject to the following three axioms:
+
+\begin{enumerate}
+
+    \item $t^2 = 1$
+
+    \item $t \neq \pm 1$
+
+    \item $t^{1/2} = -1$
+
+\end{enumerate}
+
+The multiplicative operations are defined completely by the following non-associative table:
+
+
+\begin{center}
+
+\begin{tabular}{|c|c|c|c|c|}
+
+\hline
+
+$\cdot$ & \textbf{1} & \textbf{i} & \textbf{t} & \textbf{it} \\ \hline
+
+\textbf{1} & 1 & i & t & it \\ \hline
+
+\textbf{i} & i & -1 & it & t \\ \hline
+
+\textbf{t} & t & -it & 1 & -i \\ \hline
+
+\textbf{it} & it & -t & i & -1 \\ \hline
+
+\end{tabular}
+
+\end{center}
+
+
+Evaluating the expression $i \cdot i \cdot t$ demonstrates the broken symmetry:
+
+\begin{equation}
+(i \cdot i) \cdot t = (-1) \cdot t = -t
+\end{equation}
+
+\begin{equation}
+i \cdot (i \cdot t) = i \cdot it = t
+\end{equation}
+
+Since $-t \neq t$, global associativity is destroyed, protecting the definition of $\sqrt{t} = -1$ .
+
+For this reason, it is not a value of the imaginary unit i multiplied by t but a unit.
+
+\section{Analytic Consistency and Taylor Expansion}
+
+Applying the definition of continuous exponents $t^n = e^{n \ln(t)}$, the system yields the precise constraint $\ln(t) = 2\pi i$. Evaluating this via an infinite Taylor series confirms self-consistency:
+
+\begin{equation}
+t^n = \sum_{k=0}^{\infty} \frac{(2\pi i n)^k}{k!} = \cos(2\pi n) + i \sin(2\pi n)
+\end{equation}
+
+For $n = 1/2$, $t^{1/2} = \cos(\pi) + i\sin(\pi) = -1$. For $n = 2$, $t^2 = \cos(4\pi) + i\sin(4\pi) = 1$. This demonstrates how while there is not global associativity, local power associativity is preserved as index laws of the single unit t still work. Because multiplication is not associative, we can use this Taylor series expansion to define powers of t.
+
+
+
+\end{document}
